@@ -22,6 +22,11 @@ class NotificationHeader extends Component
         $notification->markAsRead();
     }
 
+    public function markAllRead(){
+        Auth::user()->unreadNotifications->markAsRead();
+    }
+
+
     /**
      * Get the views / contents that represent the component.
      *
