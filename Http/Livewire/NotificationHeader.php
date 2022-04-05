@@ -14,7 +14,7 @@ class NotificationHeader extends Component
         $notification = DatabaseNotification::find($notif_id);
         $notification->markAsRead();
 
-        return redirect($notification->data['url']);
+        return redirect($notification->data['url'] ?? '');
     }
 
     public function markAsRead($notif_id){
